@@ -11,7 +11,7 @@ import { UserCardComponent } from '../user-card/user-card.component';
 import { CreateEditUserComponent } from '../create-edit-user/create-edit-user.component';
 import * as userListActions from '../../store/users-list.actions';
 import * as usersListSelectors from '../../store/users-list.selectors';
-import { LocalstorageService } from '../services/localstorage.service';
+import { LocalstorageService } from '../../services/localstorage.service';
 
 @Component({
   selector: 'app-users-list',

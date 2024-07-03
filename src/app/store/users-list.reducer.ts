@@ -1,5 +1,4 @@
 import { createReducer, on } from '@ngrx/store';
-import { UsersDbArray } from './usersDB';
 import { User } from '../user.model';
 import * as UsersListActions from './users-list.actions';
 

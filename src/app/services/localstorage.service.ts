@@ -1,8 +1,8 @@
 import { Injectable, inject } from '@angular/core';
 
-import { User } from '../../user.model';
+import { User } from '../user.model';
 import { Store } from '@ngrx/store';
-import { selectUsers } from '../../store/users-list.selectors';
+import { selectUsers } from '../store/users-list.selectors';
 
 @Injectable({
   providedIn: 'root',

@@ -3,8 +3,8 @@ import * as usersListActions from './users-list.actions';
 import { inject } from '@angular/core';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
 import { map, switchMap, tap } from 'rxjs';
-import { UsersApiService } from '../components/services/users-api.service';
-import { LocalstorageService } from '../components/services/localstorage.service';
+import { UsersApiService } from '../services/users-api.service';
+import { LocalstorageService } from '../services/localstorage.service';
 import { Store } from '@ngrx/store';
 import { selectUsers } from './users-list.selectors';
 

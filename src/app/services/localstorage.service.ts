@@ -1,13 +1,11 @@
 import { Injectable, inject } from '@angular/core';
 import { User } from '../user.model';
-import { Store } from '@ngrx/store';
 
 @Injectable({
   providedIn: 'root',
 })
 export class LocalstorageService {
   private readonly USERS_STORAGE_KEY = 'users';
-  private readonly store$ = inject(Store);
 
   getUsers() {
     const usersJSON = localStorage.getItem(this.USERS_STORAGE_KEY);

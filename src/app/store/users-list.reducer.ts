@@ -7,7 +7,7 @@ export interface UsersListState {
 }
 
 export interface AppState {
-  userList: {
+  usersList: {
     users: User[];
   };
 }

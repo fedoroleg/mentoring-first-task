@@ -19,8 +19,6 @@ const initialState: UsersListState = {
 export const usersListReducer = createReducer(
   initialState,
   on(UsersListActions.loadUsersSuccess, (state, action) => {
-    console.log('action', action);
-
     return {
       ...state,
       users: action.users,

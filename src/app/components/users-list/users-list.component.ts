@@ -5,7 +5,6 @@ import { MatDividerModule } from '@angular/material/divider';
 import { MatDialog } from '@angular/material/dialog';
 import { Store } from '@ngrx/store';
 import { v4 as uuidv4 } from 'uuid';
-import { Observable } from 'rxjs';
 import { User } from '../../user.model';
 import { UserCardComponent } from '../user-card/user-card.component';
 import { CreateEditUserComponent } from '../create-edit-user/create-edit-user.component';
@@ -34,10 +33,7 @@ export class UsersListComponent {
 
   ngOnInit() {
     const usersInLocalStorage = this.localStorageService.getUsers();
-    console.log('что в сторадже', this.localStorageService.getUsers());
-
     if (usersInLocalStorage === null || usersInLocalStorage.length === 0) {
-      console.log('local storage === null or 000');
       this.store.dispatch(userListActions.loadUsers());
     } else {
       this.store.dispatch(
@@ -76,7 +72,6 @@ export class UsersListComponent {
         editMode: false,
       },
     });
-
     dialogRef.afterClosed().subscribe((formData) => {
       if (formData) {
         const newUser = { ...formData, id: uuidv4() };

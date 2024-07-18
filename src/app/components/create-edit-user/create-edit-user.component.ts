@@ -9,11 +9,7 @@ import {
   MAT_DIALOG_DATA,
 } from '@angular/material/dialog';
 import { MatInputModule } from '@angular/material/input';
-import {
-  FormBuilder,
-  FormsModule,
-  Validators,
-} from '@angular/forms';
+import { FormBuilder, FormsModule, Validators } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 
@@ -36,8 +32,8 @@ import { MatButtonModule } from '@angular/material/button';
 })
 export class CreateEditUserComponent {
   public readonly data = inject(MAT_DIALOG_DATA);
+  public readonly dialogRef = inject(MatDialogRef<CreateEditUserComponent>);
   private readonly formBuilder = inject(FormBuilder);
-
   public userForm = this.formBuilder.group({
     name: ['', [Validators.required]],
     username: ['', [Validators.required]],
@@ -51,8 +47,6 @@ export class CreateEditUserComponent {
       this.userForm.patchValue(this.data.user);
     }
   }
-
-  constructor(public dialogRef: MatDialogRef<CreateEditUserComponent>) {}
 
   onNoClick(): void {
     this.dialogRef.close();

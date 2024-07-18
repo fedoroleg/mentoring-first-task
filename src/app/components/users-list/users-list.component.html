@@ -1,7 +1,8 @@
-<button mat-raised-button (click)="onAddUser()" color="primary">
-  Add User
-</button>
-<mat-divider class="divider"></mat-divider>
+<div class="btn-container">
+  <button mat-raised-button (click)="onAddUser()" color="primary">
+    Add User
+  </button>
+</div>
 @for(loadedUser of users$ | async; track loadedUser.id;) {
 <app-user-card
   [user]="loadedUser"

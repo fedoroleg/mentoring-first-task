@@ -1,5 +1,15 @@
-<h1>Users App</h1>
-
-<app-users-list></app-users-list>
-
-<!-- <router-outlet /> -->
+<h1><strong>Users List App</strong></h1>
+<div class="btn-container">
+  <button
+    mat-stroked-button
+    routerLink="/"
+    routerLinkActive="active"
+    [routerLinkActiveOptions]="{ exact: true }"
+  >
+    Home
+  </button>
+  <button mat-stroked-button routerLink="/users" routerLinkActive="active">
+    Users List
+  </button>
+</div>
+<router-outlet />

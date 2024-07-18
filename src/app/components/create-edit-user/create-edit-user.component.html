@@ -1,0 +1,38 @@
+<form [formGroup]="userForm">
+  <h2 mat-dialog-title>{{ data.editMode ? "Edit User" : "Add User" }}</h2>
+  <mat-dialog-content>
+    <mat-form-field>
+      <mat-label>Name</mat-label>
+      <input matInput formControlName="name" />
+      <mat-error>Name is required</mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Username</mat-label>
+      <input matInput formControlName="username" />
+      <mat-error>Username is required</mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Website</mat-label>
+      <input matInput formControlName="website" />
+      <mat-error>Website is required</mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Email</mat-label>
+      <input matInput formControlName="email" />
+      <mat-error>Enter a correct email adress</mat-error>
+    </mat-form-field>
+  </mat-dialog-content>
+  <mat-dialog-actions>
+    <button mat-button (click)="onNoClick()" cdkFocusInitial color="primary">
+      Cancel
+    </button>
+    <button
+      mat-flat-button
+      [mat-dialog-close]="userForm.value"
+      color="primary"
+      [disabled]="userForm.invalid"
+    >
+      {{ data.editMode ? "Save" : "Add" }}
+    </button>
+  </mat-dialog-actions>
+</form>
